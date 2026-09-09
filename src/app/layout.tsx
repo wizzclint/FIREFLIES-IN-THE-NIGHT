@@ -1,0 +1,56 @@
+import type { Metadata } from "next";
+import { Playfair_Display, Lora } from "next/font/google";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import "./globals.css";
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Fireflies in the Night",
+    template: "%s — Fireflies in the Night",
+  },
+  description:
+    "Essays, a family memoir, and the history of one community — written down before it's forgotten.",
+  icons: {
+    icon: "/images/fireflies-logo.png",
+  },
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="en"
+      className={`${playfair.variable} ${lora.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-night-900 text-cream-200">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-gold-400 focus:px-4 focus:py-2 focus:text-night-950 focus:font-semibold"
+        >
+          Skip to content
+        </a>
+        <SiteHeader />
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
+      </body>
+    </html>
+  );
+}
