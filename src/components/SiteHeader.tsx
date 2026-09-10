@@ -10,14 +10,34 @@ import Container from "./Container";
 export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Close the mobile menu whenever the route changes.
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
+  // Solid background once the page has scrolled even a little — transparent
+  // at the very top so it can float over a hero image.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Keep the header solid whenever the mobile menu is open, regardless of
+  // scroll position, so its contents stay legible over a hero image.
+  const solid = scrolled || open;
+
   return (
-    <header className="sticky top-0 z-40 border-b border-night-700/60 bg-night-900/90 backdrop-blur">
+    <header
+      className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
+        solid
+          ? "border-b border-night-700/60 bg-night-900/90 backdrop-blur"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
       <Container className="flex h-16 items-center justify-between sm:h-20">
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <Image

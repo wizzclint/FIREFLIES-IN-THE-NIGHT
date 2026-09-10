@@ -14,10 +14,10 @@ const aboutTeaser =
 export default function Home() {
   return (
     <>
-      <section className="relative flex h-[70vh] min-h-110 w-full items-end overflow-hidden sm:h-[85vh] sm:min-h-140">
+      <section className="relative -mt-16 flex h-[70vh] min-h-110 w-full items-end overflow-hidden sm:-mt-20 sm:h-[85vh] sm:min-h-140">
         <Image
-          src="/images/fireflies-bg.png"
-          alt="A lantern-lit writing desk at an open window overlooking a starlit forest and mountains, fireflies glowing in the dark"
+          src="/images/fireflies-bg1.png"
+          alt="A lantern-lit writing desk at an open window overlooking a starlit forest and mountains, with keepsake books, a photo, and fireflies glowing in the dark"
           fill
           priority
           sizes="100vw"
@@ -26,6 +26,10 @@ export default function Home() {
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-linear-to-t from-night-950 via-night-950/40 to-night-950/10"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-night-950/85 to-transparent sm:h-36"
         />
         <Container className="relative pb-12 sm:pb-16">
           <p className="max-w-2xl font-display text-2xl italic leading-snug text-cream-100 sm:text-3xl md:text-4xl">
