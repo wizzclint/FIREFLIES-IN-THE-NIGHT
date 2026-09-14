@@ -5,6 +5,7 @@ import SectionCard from "@/components/SectionCard";
 import PieceCallout from "@/components/PieceCallout";
 import CtaLink from "@/components/CtaLink";
 import CompletePoem from "@/components/CompletePoem";
+import FeaturedNow from "@/components/FeaturedNow";
 
 const heroLine =
   "Essays, a family memoir, and the history of one community — written down before it's forgotten.";
@@ -41,7 +42,14 @@ export default function Home() {
 
       <CompletePoem />
 
-      <Container className="flex flex-col gap-6 py-14 sm:gap-8 sm:py-20">
+      <Container className="flex flex-col gap-10 py-14 sm:gap-14 sm:py-20">
+        <FeaturedNow
+          title="Buyahka & Abrar"
+          description="The complete family memoir — finished, and free to read online. If you start with one thing on this site, start here."
+          ctaLabel="Read the memoir"
+          ctaHref="/sitting-with-buyahka/buyahka-and-abrar"
+        />
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 sm:gap-8">
           <SectionCard
             title="In Search of Beauty"

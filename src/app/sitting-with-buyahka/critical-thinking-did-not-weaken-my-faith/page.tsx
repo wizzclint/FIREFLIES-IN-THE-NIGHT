@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import BackLink from "@/components/BackLink";
 import ComingSoonNotice from "@/components/ComingSoonNotice";
+import RespondToPiece from "@/components/RespondToPiece";
 
 export const metadata: Metadata = {
   title: "Critical Thinking Did Not Weaken My Faith",
@@ -22,6 +23,7 @@ export default function CriticalThinkingPage() {
         </p>
 
         <ComingSoonNotice kind="essay" />
+        <RespondToPiece title="Critical Thinking Did Not Weaken My Faith" />
       </article>
     </Container>
   );

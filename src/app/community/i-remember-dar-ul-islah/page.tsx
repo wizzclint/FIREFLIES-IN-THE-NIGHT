@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import BackLink from "@/components/BackLink";
 import ComingSoonNotice from "@/components/ComingSoonNotice";
+import RespondToPiece from "@/components/RespondToPiece";
 
 export const metadata: Metadata = {
   title: "I Remember — Dar ul Islah",
@@ -23,6 +24,7 @@ export default function IRememberDarUlIslahPage() {
         </p>
 
         <ComingSoonNotice kind="piece" />
+        <RespondToPiece title="I Remember — Dar ul Islah" />
       </article>
     </Container>
   );

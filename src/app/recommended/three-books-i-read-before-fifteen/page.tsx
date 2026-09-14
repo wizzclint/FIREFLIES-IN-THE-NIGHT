@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import BackLink from "@/components/BackLink";
 import ComingSoonNotice from "@/components/ComingSoonNotice";
+import RespondToPiece from "@/components/RespondToPiece";
 
 export const metadata: Metadata = {
   title: "Three Books I Read Before Fifteen",
@@ -22,6 +23,7 @@ export default function ThreeBooksPage() {
         </p>
 
         <ComingSoonNotice kind="list" />
+        <RespondToPiece title="Three Books I Read Before Fifteen" />
       </article>
     </Container>
   );
