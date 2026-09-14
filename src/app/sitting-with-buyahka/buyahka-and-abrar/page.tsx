@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import BackLink from "@/components/BackLink";
 import CtaLink from "@/components/CtaLink";
+import ShareButton from "@/components/ShareButton";
 import rawChapters from "@/content/buyahka-and-abrar.json";
 
 export const metadata: Metadata = {
@@ -49,10 +50,11 @@ export default function BuyahkaAndAbrarPage() {
         <p className="mt-3 font-body text-lg italic text-cream-300">
           The complete family memoir — finished, and free to read online.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
           <CtaLink href="/contact?about=Buyahka%20%26%20Abrar" variant="outline">
             Tell Ahmad what you think
           </CtaLink>
+          <ShareButton title="Buyahka & Abrar — Fireflies in the Night" />
         </div>
       </header>
 
