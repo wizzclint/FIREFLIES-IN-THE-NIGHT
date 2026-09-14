@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Essays, a family memoir, and the history of one community — written down before it's forgotten.",
   icons: {
-    icon: "/images/fireflies-logo.png",
+    icon: "/images/fireflies-logo-icon.png",
   },
 };
 

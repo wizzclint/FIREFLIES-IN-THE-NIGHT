@@ -41,7 +41,7 @@ export default function SiteHeader() {
       <Container className="flex h-16 items-center justify-between sm:h-20">
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <Image
-            src="/images/fireflies-logo.png"
+            src="/images/fireflies-logo-icon.png"
             alt=""
             width={44}
             height={44}
