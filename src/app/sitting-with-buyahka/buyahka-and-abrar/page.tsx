@@ -2,15 +2,30 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import BackLink from "@/components/BackLink";
 import CtaLink from "@/components/CtaLink";
+import rawChapters from "@/content/buyahka-and-abrar.json";
 
 export const metadata: Metadata = {
   title: "Buyahka & Abrar",
   description: "The complete family memoir — finished, and free to read online.",
 };
 
-// Placeholder chapter structure. Replace each chapter's `paragraphs` with the
-// real memoir text when it's ready — the anchor ids (used by the "Chapters"
-// list below) can stay the same, or be renamed to match real chapter breaks.
+type RawChapter = { number: number; title: string; paragraphs: string[] };
+
+const chapters = (rawChapters as RawChapter[]).map((c) => ({
+  id: `chapter-${c.number}`,
+  title: c.title,
+  paragraphs: c.paragraphs,
+}));
+
+// Groups chapters under their book part, per the memoir's own table of
+// contents, for the "Chapters" navigation list.
+const parts = [
+  { title: "Part One — Inheriting", range: [1, 4] },
+  { title: "Part Two — Building", range: [5, 7] },
+  { title: "Part Three — Rupture & Collapse", range: [8, 11] },
+  { title: "Part Four — Return", range: [12, 12] },
+] as const;
+
 // Placeholder episode structure — awaiting the approved videos and the
 // Samples & Specs document. Swap `videoUrl: null` for a real embeddable URL
 // (YouTube/Vimeo) or a hosted file per episode once they're ready; nothing
@@ -20,32 +35,6 @@ const episodes = [
   { id: "episode-2", title: "Episode 2", description: "Video coming soon.", videoUrl: null },
   { id: "episode-3", title: "Episode 3", description: "Video coming soon.", videoUrl: null },
   { id: "episode-4", title: "Episode 4", description: "Video coming soon.", videoUrl: null },
-];
-
-const chapters = [
-  {
-    id: "chapter-one",
-    title: "Chapter One — Beginnings",
-    paragraphs: [
-      "This is placeholder text standing in for Chapter One of Buyahka & Abrar. It's here only to preview line length, spacing, and rhythm on this page — replace it with the real opening of the memoir when it's ready.",
-      "A second paragraph, so the reading layout can be checked across several lines of running prose, the way the finished chapter eventually will read.",
-    ],
-  },
-  {
-    id: "chapter-two",
-    title: "Chapter Two — What the House Remembered",
-    paragraphs: [
-      "More placeholder text for Chapter Two. This section exists to hold the shape of a longer chapter — several paragraphs, a natural break, a return.",
-      "When the real content arrives, it can be dropped in paragraph by paragraph without changing the surrounding template.",
-    ],
-  },
-  {
-    id: "chapter-three",
-    title: "Chapter Three — Buyahka & Abrar",
-    paragraphs: [
-      "A final placeholder chapter, closing out the preview structure. Add, remove, or rename chapters freely — the anchor list above will follow whatever is listed here.",
-    ],
-  },
 ];
 
 export default function BuyahkaAndAbrarPage() {
@@ -71,18 +60,27 @@ export default function BuyahkaAndAbrarPage() {
         <p className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
           Chapters
         </p>
-        <ol className="mt-3 flex flex-col gap-2">
-          {chapters.map((chapter, i) => (
-            <li key={chapter.id}>
-              <a
-                href={`#${chapter.id}`}
-                className="font-body text-cream-200 hover:text-gold-300"
-              >
-                {i + 1}. {chapter.title}
-              </a>
-            </li>
+        <div className="mt-4 flex flex-col gap-4">
+          {parts.map((part) => (
+            <div key={part.title}>
+              <p className="font-body text-xs font-semibold text-cream-300/70">{part.title}</p>
+              <ol className="mt-1.5 flex flex-col gap-1.5">
+                {chapters
+                  .filter((c, i) => i + 1 >= part.range[0] && i + 1 <= part.range[1])
+                  .map((chapter, i) => (
+                    <li key={chapter.id}>
+                      <a
+                        href={`#${chapter.id}`}
+                        className="font-body text-cream-200 hover:text-gold-300"
+                      >
+                        {part.range[0] + i}. {chapter.title}
+                      </a>
+                    </li>
+                  ))}
+              </ol>
+            </div>
           ))}
-        </ol>
+        </div>
       </nav>
 
       <section aria-labelledby="episodes-heading" className="mt-10 max-w-3xl sm:mt-14">
@@ -136,9 +134,19 @@ export default function BuyahkaAndAbrarPage() {
                 {chapter.title}
               </h2>
               <div className="mt-4 flex flex-col gap-5 text-lg leading-loose">
-                {chapter.paragraphs.map((paragraph, j) => (
-                  <p key={j}>{paragraph}</p>
-                ))}
+                {chapter.paragraphs.map((paragraph, j) =>
+                  paragraph.trim() === "❦" ? (
+                    <p
+                      key={j}
+                      aria-hidden="true"
+                      className="my-2 text-center text-2xl text-gold-400/60"
+                    >
+                      ❦
+                    </p>
+                  ) : (
+                    <p key={j}>{paragraph}</p>
+                  )
+                )}
               </div>
             </section>
           </div>
