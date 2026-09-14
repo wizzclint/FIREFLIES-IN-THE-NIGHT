@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import SectionCard from "@/components/SectionCard";
 import PieceCallout from "@/components/PieceCallout";
 import CtaLink from "@/components/CtaLink";
+import CompletePoem from "@/components/CompletePoem";
 
 const heroLine =
   "Essays, a family memoir, and the history of one community — written down before it's forgotten.";
@@ -37,6 +38,8 @@ export default function Home() {
           </p>
         </Container>
       </section>
+
+      <CompletePoem />
 
       <Container className="flex flex-col gap-6 py-14 sm:gap-8 sm:py-20">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 sm:gap-8">
