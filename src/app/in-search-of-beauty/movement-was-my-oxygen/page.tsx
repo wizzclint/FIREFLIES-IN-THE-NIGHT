@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import BackLink from "@/components/BackLink";
 import RespondToPiece from "@/components/RespondToPiece";
+import EpisodeVideo from "@/components/EpisodeVideo";
 
 export const metadata: Metadata = {
   title: "Movement Was My Oxygen",
@@ -131,6 +132,12 @@ export default function MovementWasMyOxygenPage() {
         <p className="mt-3 font-body text-lg italic text-cream-300">
           The opening essay — where this collection starts.
         </p>
+
+        <EpisodeVideo
+          episodeLabel="Through the Storms — Episode 03"
+          title="Movement Was My Oxygen"
+          videoUrl={null}
+        />
 
         <div className="mt-10 flex max-w-prose flex-col gap-5 font-body text-lg leading-loose text-cream-200">
           {paragraphs.map((paragraph, i) => (
