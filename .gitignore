@@ -42,3 +42,10 @@ next-env.d.ts
 
 # claude code session state
 .claude/
+
+# private planning/spec docs - not part of the site
+*.xlsx
+*.xls
+*.docx
+*.doc
+*.pdf

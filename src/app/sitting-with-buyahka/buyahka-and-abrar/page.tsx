@@ -11,6 +11,17 @@ export const metadata: Metadata = {
 // Placeholder chapter structure. Replace each chapter's `paragraphs` with the
 // real memoir text when it's ready — the anchor ids (used by the "Chapters"
 // list below) can stay the same, or be renamed to match real chapter breaks.
+// Placeholder episode structure — awaiting the approved videos and the
+// Samples & Specs document. Swap `videoUrl: null` for a real embeddable URL
+// (YouTube/Vimeo) or a hosted file per episode once they're ready; nothing
+// else on the page needs to change.
+const episodes = [
+  { id: "episode-1", title: "Episode 1", description: "Video coming soon.", videoUrl: null },
+  { id: "episode-2", title: "Episode 2", description: "Video coming soon.", videoUrl: null },
+  { id: "episode-3", title: "Episode 3", description: "Video coming soon.", videoUrl: null },
+  { id: "episode-4", title: "Episode 4", description: "Video coming soon.", videoUrl: null },
+];
+
 const chapters = [
   {
     id: "chapter-one",
@@ -76,6 +87,48 @@ export default function BuyahkaAndAbrarPage() {
           ))}
         </ol>
       </nav>
+
+      <section aria-labelledby="episodes-heading" className="mt-10 max-w-3xl sm:mt-14">
+        <h2
+          id="episodes-heading"
+          className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-gold-400"
+        >
+          Episodes
+        </h2>
+        <p className="mt-2 font-body text-cream-300">
+          A few videos accompany the memoir — they&apos;ll appear here once they&apos;re ready.
+        </p>
+        <ul className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+          {episodes.map((episode) => (
+            <li
+              key={episode.id}
+              className="overflow-hidden rounded-xl border border-night-600/50 bg-night-800/40"
+            >
+              <div className="flex aspect-video items-center justify-center bg-night-950/60">
+                {episode.videoUrl ? (
+                  <video src={episode.videoUrl} controls className="h-full w-full" />
+                ) : (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                    className="h-10 w-10 text-cream-300/40"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9.25" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 8.5v7l6-3.5-6-3.5Z" />
+                  </svg>
+                )}
+              </div>
+              <div className="p-4">
+                <p className="font-display text-lg text-cream-100">{episode.title}</p>
+                <p className="mt-1 font-body text-sm text-cream-300">{episode.description}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <article className="mt-10 max-w-prose font-body text-cream-200 sm:mt-14">
         {chapters.map((chapter, i) => (
