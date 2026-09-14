@@ -24,10 +24,22 @@ export default function SiteFooter() {
           </ul>
         </nav>
       </Container>
-      <Container className="border-t border-night-700/40 py-4">
+      <Container className="flex flex-col gap-3 border-t border-night-700/40 py-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="font-body text-xs text-cream-300/70">
           &copy; {new Date().getFullYear()} Fireflies in the Night. All rights reserved.
         </p>
+        <ul className="flex gap-x-5 text-xs">
+          <li>
+            <Link href="/contact" className="text-cream-300/70 hover:text-gold-300">
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link href="/privacy" className="text-cream-300/70 hover:text-gold-300">
+              Privacy
+            </Link>
+          </li>
+        </ul>
       </Container>
     </footer>
   );

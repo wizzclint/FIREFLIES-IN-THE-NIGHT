@@ -61,10 +61,7 @@ export default function BuyahkaAndAbrarPage() {
           The complete family memoir — finished, and free to read online.
         </p>
         <div className="mt-6">
-          <CtaLink
-            href="mailto:hello@firefliesinthenight.com?subject=Buyahka%20%26%20Abrar"
-            variant="outline"
-          >
+          <CtaLink href="/contact?about=Buyahka%20%26%20Abrar" variant="outline">
             Tell Ahmad what you think
           </CtaLink>
         </div>
