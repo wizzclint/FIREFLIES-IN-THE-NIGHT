@@ -21,6 +21,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fireflies-in-the-night.vercel.app"),
   title: {
     default: "Fireflies in the Night",
     template: "%s — Fireflies in the Night",
@@ -29,6 +30,19 @@ export const metadata: Metadata = {
     "Essays, a family memoir, and the history of one community — written down before it's forgotten.",
   icons: {
     icon: "/images/fireflies-logo-icon.png",
+  },
+  openGraph: {
+    title: "Fireflies in the Night",
+    description:
+      "Essays, a family memoir, and the history of one community — written down before it's forgotten.",
+    siteName: "Fireflies in the Night",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fireflies in the Night",
+    description:
+      "Essays, a family memoir, and the history of one community — written down before it's forgotten.",
   },
 };
 
