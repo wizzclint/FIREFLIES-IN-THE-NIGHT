@@ -52,3 +52,7 @@ next-env.d.ts
 *.pdf
 /reports/
 /FIRE/
+
+# memoir source text - the site only ships the encrypted version
+# (src/content/buyahka-and-abrar.locked.json); keep the plaintext local only
+/src/content/buyahka-and-abrar.json

@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import BackLink from "@/components/BackLink";
 import ShareButton from "@/components/ShareButton";
-import ChapterBody from "@/components/ChapterBody";
-import { chapters, getChapterBySlug, getAdjacentChapters, getPartForChapter } from "@/lib/memoir";
+import LockedChapterBody from "@/components/LockedChapterBody";
+import { chapters, getChapterBySlug, getLockedChapterBySlug, getAdjacentChapters, getPartForChapter, memoirLock } from "@/lib/memoir";
 
 export function generateStaticParams() {
   return chapters.map((c) => ({ chapterSlug: c.slug }));
@@ -32,7 +32,8 @@ export default async function MemoirChapterPage({
 }) {
   const { chapterSlug } = await params;
   const chapter = getChapterBySlug(chapterSlug);
-  if (!chapter) notFound();
+  const lockedChapter = getLockedChapterBySlug(chapterSlug);
+  if (!chapter || !lockedChapter) notFound();
 
   const { previous, next } = getAdjacentChapters(chapter.number);
   const part = getPartForChapter(chapter.number);
@@ -58,7 +59,7 @@ export default async function MemoirChapterPage({
           <ShareButton title={`${chapter.title} — Buyahka & Abrar`} />
         </div>
 
-        <ChapterBody paragraphs={chapter.paragraphs} />
+        <LockedChapterBody lock={memoirLock} chapter={lockedChapter} />
 
         <nav
           aria-label="Chapter navigation"
