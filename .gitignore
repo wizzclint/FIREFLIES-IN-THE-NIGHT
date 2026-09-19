@@ -56,3 +56,9 @@ next-env.d.ts
 # memoir source text - the site only ships the encrypted version
 # (src/content/buyahka-and-abrar.locked.json); keep the plaintext local only
 /src/content/buyahka-and-abrar.json
+
+# real family photos/video/audio - local preview only until hosted on
+# Cloudinary; never commit real family media into the git repo
+/public/memoir-preview/
+/leg/
+/leg-extracted/

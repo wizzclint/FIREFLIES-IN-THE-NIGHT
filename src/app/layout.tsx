@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lora } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import SiteHeader from "@/components/SiteHeader";
-import SiteFooter from "@/components/SiteFooter";
+import { SiteHeaderGate, SiteFooterGate, MainPaddingGate } from "@/components/SiteChrome";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -60,11 +59,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
-        <SiteHeader />
-        <main id="main-content" className="flex-1 pt-16 sm:pt-20">
-          {children}
-        </main>
-        <SiteFooter />
+        <SiteHeaderGate />
+        <MainPaddingGate>{children}</MainPaddingGate>
+        <SiteFooterGate />
         <Analytics />
       </body>
     </html>
