@@ -161,8 +161,8 @@ const chapter06: MemoirChapterContent = {
       rowLabel: "The House · The Children · The Years",
       heading: "Family continuity, 1991 onward",
       items: [
-        { imageSrc: "https://drive.google.com/thumbnail?id=16-ca3_qeZSv7LV9UknfA0Atdmq97fJ9t&sz=w1200", alt: "Our family", caption: "Our family. The core five." },
-        { imageSrc: "https://drive.google.com/thumbnail?id=11qSJqad_GrxcqWRRpj1mANL6s2UkA28K&sz=w1200", alt: "Moaaz, Zanab, Shahbaaz", caption: "Moaaz, Zanab, Shahbaaz. The three." },
+        { imageSrc: "https://res.cloudinary.com/kh0ahdrd/image/upload/v1789886452/buyahka-abrar/drive-docs/16-ca3_qeZSv7LV9UknfA0Atdmq97fJ9t.jpg", alt: "Our family", caption: "Our family. The core five." },
+        { imageSrc: "https://res.cloudinary.com/kh0ahdrd/image/upload/v1789886451/buyahka-abrar/drive-docs/11qSJqad_GrxcqWRRpj1mANL6s2UkA28K.jpg", alt: "Moaaz, Zanab, Shahbaaz", caption: "Moaaz, Zanab, Shahbaaz. The three." },
         { imageSrc: "https://drive.google.com/thumbnail?id=1Ot3vrFMnvF0cWCXsXvVS3_CQgTO1FHas&sz=w1200", alt: "Family at Rockleigh Reception", caption: "A family celebration at Rockleigh." },
         { imageSrc: "https://drive.google.com/thumbnail?id=1hs0-lzhIzMv4EV6Sw02ZnQJlQ46MjpIa&sz=w1200", alt: "Hina and Ahmad in the park", caption: "Hina and Ahmad. In the park." },
         { imageSrc: "https://drive.google.com/thumbnail?id=1GXVNfuhCNQGdIr8WidvkJzIOm8TsQdrS&sz=w1200", alt: "Husband and wife", caption: "Husband and wife." },

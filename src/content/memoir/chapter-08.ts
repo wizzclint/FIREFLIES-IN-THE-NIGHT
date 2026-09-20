@@ -310,10 +310,10 @@ const chapter08: MemoirChapterContent = {
       items: [
         { imageSrc: "https://drive.google.com/thumbnail?id=1Mv9j6K_t7jh9W1sXrRtmefDcL7SYtTAh&sz=w1200", alt: "Hina with mirror", caption: "Hina, in mirror." },
         { imageSrc: "https://drive.google.com/thumbnail?id=1cNnPbHDjg4r0eObDnSfz0pUFzZfFzE7o&sz=w1200", alt: "Hina close up, latest", caption: "Close up." },
-        { imageSrc: "https://drive.google.com/thumbnail?id=1CHz7_5CjY0118D7-rTiHeQVW2HlsklHf&sz=w1200", alt: "Hina close up, seaside", caption: "Seaside." },
+        { imageSrc: "https://res.cloudinary.com/kh0ahdrd/image/upload/v1789886453/buyahka-abrar/drive-docs/1CHz7_5CjY0118D7-rTiHeQVW2HlsklHf.jpg", alt: "Hina close up, seaside", caption: "Seaside." },
         { imageSrc: "https://drive.google.com/thumbnail?id=17LobIEGBds6hiq9n1EPU0w76yy_8gtrv&sz=w1200", alt: "Hina portrait", caption: "Portrait." },
         { imageSrc: "https://drive.google.com/thumbnail?id=11B-VhGHXl1yJ09kKa0NWkJeKePQuBexk&sz=w1200", alt: "Hina in red", caption: "In red." },
-        { imageSrc: "https://drive.google.com/thumbnail?id=1F52n3TdM9uU57EdxBzuxpf3FbQE8-39s&sz=w1200", alt: "Hina with closed eyes", caption: "Closed eyes." },
+        { imageSrc: "https://res.cloudinary.com/kh0ahdrd/image/upload/v1789886454/buyahka-abrar/drive-docs/1F52n3TdM9uU57EdxBzuxpf3FbQE8-39s.jpg", alt: "Hina with closed eyes", caption: "Closed eyes." },
       ],
     },
     {
@@ -338,7 +338,7 @@ const chapter08: MemoirChapterContent = {
       type: "artifactCard",
       label: "May 26, 2019",
       heading: "The burial",
-      imageSrc: "https://drive.google.com/thumbnail?id=1-YmFt3hImsDhZZZJPmCAHoE2PJyTbIuJ&sz=w1200",
+      imageSrc: "https://res.cloudinary.com/kh0ahdrd/image/upload/v1789886455/buyahka-abrar/drive-docs/1-YmFt3hImsDhZZZJPmCAHoE2PJyTbIuJ.jpg",
       alt: "Hina's grave, burial May 26, 2019",
       caption: "The morning after. The ground that holds her now.",
     },

@@ -291,9 +291,9 @@ const chapter07: MemoirChapterContent = {
       rowLabel: "2017–2018 · The Years Before the Last Year",
       heading: "Mecca, and then a wedding in November",
       items: [
-        { imageSrc: "https://drive.google.com/thumbnail?id=1YJPjuiAvxwLf_pnZUQmX1Nxy8AqCz_xlug&sz=w1200", alt: "Hina's 50th birthday trip to Mecca, 2017", caption: "Hina's 50th birthday trip. Mecca. 2017. Two years before the last year." },
+        { imageSrc: "https://res.cloudinary.com/kh0ahdrd/image/upload/v1789886448/buyahka-abrar/drive-docs/1YJPjuiAvxwLf_pnZUQmX1Nxy8AqCz_xlug.jpg", alt: "Hina's 50th birthday trip to Mecca, 2017", caption: "Hina's 50th birthday trip. Mecca. 2017. Two years before the last year." },
         { imageSrc: "https://drive.google.com/thumbnail?id=1mjgZKrtmQbQ7G0iIrHgxFcPAtM3_b-5s&sz=w1200", alt: "Hina and Qurat ul Ann, Nikah November 23, 2018", caption: "Hina and Qurat ul Ann. Nikah, November 23, 2018. Six months before May 25, 2019." },
-        { imageSrc: "https://drive.google.com/thumbnail?id=1usCYFhBJWome7aFHFPcUh5WgkM-ny29SQQ&sz=w1200", alt: "Zanab and Moaaz at the Baraat shadi, November 24, 2018", caption: "Zanab and Moaaz. Baraat shadi, November 24, 2018." },
+        { imageSrc: "https://res.cloudinary.com/kh0ahdrd/image/upload/v1789886449/buyahka-abrar/drive-docs/1usCYFhBJWome7aFHFPcUh5WgkM-ny29SQQ.jpg", alt: "Zanab and Moaaz at the Baraat shadi, November 24, 2018", caption: "Zanab and Moaaz. Baraat shadi, November 24, 2018." },
       ],
     },
     {

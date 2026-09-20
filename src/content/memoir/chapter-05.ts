@@ -346,7 +346,7 @@ const chapter05: MemoirChapterContent = {
         { imageSrc: "https://drive.google.com/thumbnail?id=1Dl-D0SvBkut0OrAl9QXXxvOG-zp7qjIL&sz=w1200", alt: "The young family", caption: "The young family." },
         { imageSrc: "https://drive.google.com/thumbnail?id=1yWeMAorynh-pRhhZ2OYfSRU5Z9xfUcrJ&sz=w1200", alt: "Ahmad with the boys", caption: "Ahmad with the boys. Moaaz and Shahbaaz." },
         { imageSrc: "https://drive.google.com/thumbnail?id=1Sfnim4G5yCMbbJ4rf1OklPR0axDEW1k4&sz=w1200", alt: "Look, a baby brother", caption: "\"Look — a baby brother.\"" },
-        { imageSrc: "https://drive.google.com/thumbnail?id=1M3nMF86DehHN7t6VmgxwP63X_CwcrSA5&sz=w1200", alt: "Moaaz and Hina", caption: "Moaaz and Hina. Mother and son." },
+        { imageSrc: "https://res.cloudinary.com/kh0ahdrd/image/upload/v1789886450/buyahka-abrar/drive-docs/1M3nMF86DehHN7t6VmgxwP63X_CwcrSA5.jpg", alt: "Moaaz and Hina", caption: "Moaaz and Hina. Mother and son." },
       ],
     },
     { type: "chapterEnd", nextTitle: "Chapter Six — September's Children" },
