@@ -27,14 +27,16 @@ export default function Home() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-linear-to-t from-night-950 via-night-950/40 to-night-950/10"
+          className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-night-950/70 to-transparent"
         />
         <div
           aria-hidden="true"
           className="absolute inset-x-0 top-0 h-28 bg-linear-to-b from-night-950/85 to-transparent sm:h-36"
         />
         <Container className="relative pb-12 sm:pb-16">
-          <p className="max-w-2xl font-display text-2xl italic leading-snug text-cream-100 sm:text-3xl md:text-4xl">
+          <p
+            className="max-w-2xl font-display text-2xl italic leading-snug text-cream-100 sm:text-3xl md:text-4xl [text-shadow:0_2px_16px_rgba(0,0,0,0.85)]"
+          >
             {heroLine}
           </p>
         </Container>
