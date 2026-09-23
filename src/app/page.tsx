@@ -35,7 +35,7 @@ export default function Home() {
         />
         <Container className="relative pb-12 sm:pb-16">
           <p
-            className="max-w-2xl font-display text-2xl italic leading-snug text-cream-100 sm:text-3xl md:text-4xl [text-shadow:0_2px_16px_rgba(0,0,0,0.85)]"
+            className="hero-tagline max-w-2xl font-display text-2xl italic leading-snug text-cream-100 sm:text-3xl md:text-4xl [text-shadow:0_2px_16px_rgba(0,0,0,0.85)]"
           >
             {heroLine}
           </p>
