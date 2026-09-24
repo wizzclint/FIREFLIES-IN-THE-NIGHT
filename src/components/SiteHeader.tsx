@@ -45,13 +45,13 @@ export default function SiteHeader() {
       >
         <Link href="/" aria-label="Fireflies in the Night — home" className="shrink-0">
           <Image
-            src="/images/fireflies-logo-full.png"
+            src="/images/fireflies-logo-badge.png"
             alt="Fireflies in the Night"
-            width={554}
-            height={640}
+            width={480}
+            height={480}
             priority
             className={`h-16 w-auto transition-[height] duration-300 sm:h-20 ${
-              scrolled ? "lg:h-20" : "lg:h-26"
+              scrolled ? "lg:h-20" : "lg:h-28"
             }`}
           />
         </Link>
