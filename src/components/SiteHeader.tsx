@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { navLinks } from "@/lib/nav";
 import Container from "./Container";
 
@@ -38,40 +38,55 @@ export default function SiteHeader() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <Container className="flex h-16 items-center justify-between sm:h-20">
-        <Link href="/" className="flex items-center gap-3 shrink-0">
+      <Container className="flex h-16 items-center justify-between sm:h-20 lg:h-24">
+        <Link href="/" aria-label="Fireflies in the Night — home" className="shrink-0">
           <Image
-            src="/images/fireflies-logo-icon.png"
-            alt=""
-            width={44}
-            height={44}
+            src="/images/fireflies-logo-horizontal.png"
+            alt="Fireflies in the Night"
+            width={1382}
+            height={384}
             priority
-            className="h-9 w-9 sm:h-11 sm:w-11 rounded-full"
+            className="h-10 w-auto sm:h-12 lg:h-16"
           />
-          <span className="font-display text-lg sm:text-xl text-cream-100">
-            Fireflies in the Night
-          </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-6 lg:gap-8">
-            {navLinks.map((link) => {
+        <nav aria-label="Primary" className="hidden lg:block">
+          <ul className="flex items-start">
+            {navLinks.map((link, i) => {
               const active =
                 link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
               return (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    aria-current={active ? "page" : undefined}
-                    className={`font-body text-sm tracking-wide transition-colors ${
-                      active
-                        ? "text-gold-400"
-                        : "text-cream-200 hover:text-gold-300"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
+                <Fragment key={link.href}>
+                  {i > 0 && (
+                    <li aria-hidden="true" className="mt-1 h-7 w-px bg-cream-100/25" />
+                  )}
+                  <li>
+                    <Link
+                      href={link.href}
+                      aria-current={active ? "page" : undefined}
+                      className={`group flex flex-col items-center px-5 font-nav text-[13px] font-medium uppercase leading-[1.4] tracking-[0.16em] transition-colors [text-shadow:0_1px_10px_rgba(0,0,0,0.7)] ${
+                        active ? "text-gold-300" : "text-cream-100 hover:text-gold-300"
+                      }`}
+                    >
+                      <span className="flex h-[2.8em] items-center justify-center text-center">
+                        {link.lines
+                          ? link.lines.map((line, n) => (
+                              <Fragment key={line}>
+                                {n > 0 && <br />}
+                                {line}
+                              </Fragment>
+                            ))
+                          : link.label}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className={`mt-2 block h-0.5 rounded-full bg-gold-400 shadow-[0_0_8px_rgba(227,186,99,0.65)] transition-all duration-300 ${
+                          active ? "w-10" : "w-7 group-hover:w-10"
+                        }`}
+                      />
+                    </Link>
+                  </li>
+                </Fragment>
               );
             })}
           </ul>
@@ -79,7 +94,7 @@ export default function SiteHeader() {
 
         <button
           type="button"
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-cream-100 hover:text-gold-300"
+          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-cream-100 hover:text-gold-300"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -98,19 +113,19 @@ export default function SiteHeader() {
       </Container>
 
       {open && (
-        <nav id="mobile-nav" aria-label="Primary" className="md:hidden border-t border-night-700/60 bg-night-900">
+        <nav id="mobile-nav" aria-label="Primary" className="lg:hidden border-t border-night-700/60 bg-night-900">
           <Container>
             <ul className="flex flex-col py-2">
               {navLinks.map((link) => {
                 const active =
                   link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
                 return (
-                  <li key={link.href}>
+                  <li key={link.href} className="border-b border-cream-100/10 last:border-b-0">
                     <Link
                       href={link.href}
                       aria-current={active ? "page" : undefined}
-                      className={`block py-3 font-body text-base ${
-                        active ? "text-gold-400" : "text-cream-200 hover:text-gold-300"
+                      className={`block py-3.5 font-nav text-[13px] font-medium uppercase tracking-[0.16em] ${
+                        active ? "text-gold-300" : "text-cream-100 hover:text-gold-300"
                       }`}
                     >
                       {link.label}

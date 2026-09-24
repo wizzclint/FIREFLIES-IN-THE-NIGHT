@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lora } from "next/font/google";
+import { Playfair_Display, Lora, Cinzel } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SiteHeaderGate, SiteFooterGate, MainPaddingGate } from "@/components/SiteChrome";
 import "./globals.css";
@@ -17,6 +17,14 @@ const lora = Lora({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+// Classical Roman capitals for the header menu — the same family of lettering
+// as the logo's wordmark, so the two read as one piece.
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -50,7 +58,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${lora.variable} h-full antialiased`}
+      className={`${playfair.variable} ${lora.variable} ${cinzel.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-night-900 text-cream-200">
         <a

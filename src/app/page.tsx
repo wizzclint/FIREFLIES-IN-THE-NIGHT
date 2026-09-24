@@ -16,7 +16,7 @@ const aboutTeaser =
 export default function Home() {
   return (
     <>
-      <section className="relative -mt-16 flex h-[70vh] min-h-110 w-full items-end overflow-hidden sm:-mt-20 sm:h-[85vh] sm:min-h-140">
+      <section className="relative -mt-16 flex h-[70vh] min-h-110 w-full items-end overflow-hidden sm:-mt-20 lg:-mt-24 sm:h-[85vh] sm:min-h-140">
         <Image
           src="/images/fireflies-bg1.png"
           alt="A lantern-lit writing desk at an open window overlooking a starlit forest and mountains, with keepsake books, a photo, and fireflies glowing in the dark"
